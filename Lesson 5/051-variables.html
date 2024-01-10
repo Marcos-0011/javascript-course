@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variables</title>
+  </head>
+  <body>
+    <script>
+      /* Syntax Rules: Let creates a new variable, then give variable a new name. A few restrictions: let isn't allowed as it already has a special meaning in javascript. Can'start a variable name with a number. Can't use most special characters except $ and _. Use = to save value inside variable. In JS, semicolon ends an instruction, acts like a period.
+      */
+      let variable1 = 3;
+      console.log(variable1);
+
+      const calculation = 2+2;
+      console.log(calculation);
+      console.log(calculation+2);
+
+      const result = calculation+2;
+      console.log(result);
+
+      const message = 'hello';
+      console.log(message); console.log(';');
+
+      /* When reassining value to a variable, don't use let as it creates a new variable, just write the variable name and the new value
+      */
+      variable1 = 5;
+      console.log(variable1);
+
+      variable1 = variable1 + 1;
+      console.log(variable1);
+
+      const variable2 = 3;
+      /*const is useful when yk you're not changing the variable later on. Keeps the variable CONSTANT. Use const by default as it's safer for the code as it lets yk the permanent value of the variable. Another way to make a variable is to use var. But var has issues which is why it's not commonly used. If we have to use a variable, use let.
+      */
+      var variable3 = 3;
+
+      console.log(typeof variable2);
+      console.log(typeof message);
+      /*typeof let's us know the type of value it is. Useful for checking the type of the variable */
+    </script>
+  </body>
+</html>
+
