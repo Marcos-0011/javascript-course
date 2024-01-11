@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      /*
+      these are called booleans (they're either true or false values)
+      true
+      false
+
+      console.log(3 > 5 - 5);
+
+      console.log(5 === '5.00');
+
+      In booleans, computer checks if what's inside an if statement is true. If so, it runs what's inside the first set of curly brackets. If it is not true, then it runs the else set of brackets:
+      if (false) {
+        console.log('hello');
+      } else {
+        console.log('else');
+      }
+
+      const age = 15;
+
+      Can use multiple branches at a time:
+      if (age >= 16) {
+        console.log('You can drive');
+        console.log('Congrats');
+      } else if (age >= 14) {
+        console.log('Almost there!');
+      } else {
+        console.log('You can not drive');
+      }
+
+      //&& (and) checks if both values on both sides are true
+
+      console.log(true && false);
+      console.log(0.2 >= 0 && 0.2 < 1 / 3);
+
+      //|| (or) checks either value is true
+      console.log(true || false)
+
+      //! (not) will flip the value, so if it's true, it will turn into false and if it's false it will turn into true
+      console.log(!true);
+
+      //Truthy and Falsy values
+      if (0) {
+        console.log('truthy');
+      }
+      we would call 5 a truthy value as it acts as true, but if we use 0 it's called a falsy value bc it behaves like false
+      falsy values: false, 0, '', NaN, undefined, null
+      any value not on this list is a truthy value
+
+      const cartQuantity = 5;
+
+      if (cartQuantity) {
+        console.log(`cart has products`);
+      }
+      //cartQuantity is the same as cartQuantity > 0 as cartQuantity is 5, which is greater than 0. therefore, this is a truthy value.
+
+      console.log(!0);
+      //0 is a falsy value and with ! it turns into true
+
+      //NaN means Not a Number
+      console.log('text' / 5);
+
+      let variable1;
+      console.log(variable1);
+      */
+
+      //Ternary operator: shortcut for an if else statement. advantage is it can be saved in a variable
+      const result = 0 ? 'truthy' : 'falsy'
+      console.log(result);
+
+      //Guard operator: because && checks if both values are true, the computer will stop after false bc there is no need to check if the second one is true as the first value is already false. therefore && is also called the guard operator. can also be saved in a variable like the ternary operator
+      false && console.log('hello');
+
+      const message = 5 && 'hello';
+      console.log(message);
+      
+      let variable10 = 'bye' && 5;
+      console.log(variable10);
+
+      let variable11 = 'hi' && 'hola' && 'ciao';
+      console.log(variable11);
+      
+      //default operator: || checks if either value is true. if first is true then it stops early, or 'short circuits'. If first is falsy, then goes to next value. Default operator helps set a default value
+      const currency = undefined || 'USD';
+      console.log(currency);
+
+  
+      //these are all shortcuts for an if statement in a single line
+
+    </script>
+  </body>
+</html>
+

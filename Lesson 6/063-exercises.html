@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 6 Exercises</title>
+  </head>
+  <body>
+    <script>
+      //6a-c
+      const hour = 15;
+      const name = 'Marcos';
+
+      if (hour >= 6 && hour <= 12) {
+        console.log(`Good morning, ${name}!`);
+      } else if (hour >= 13 && hour <= 17) {
+        console.log(`Good afternoon, ${name}!`);
+      } else {
+        console.log(`Good night, ${name}!`);
+      }
+
+      //6d-e
+      const age = 5;
+      const isHoliday = true;
+      if ((age <= 6 || age >= 65) && !isHoliday) {
+        console.log('Discount');
+      } else {
+        console.log('No discount');
+      }
+      //isHoliday = true means it is a holiday, therefore we need to add the ! to isHoliday in the if condition to make the overall condition false bc discounts arent allowed on holidays. Which leads the computer to show no discount in the log. If isHoliday = false, then it would be true in the if condition bc of !. Which leads computer to show discount in console.
+    </script>
+  </body>
+</html>
