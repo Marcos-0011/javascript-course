@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      //functions let us reuse code. write function, then give it a name. Can't use special words like function as a name, can't start w a number and can't use special characters except: $_. best practice is to use camelCase. function only creates a function, doesnt run any code, need to write it as below to 'run' the function
+      /*
+      function function1() {
+        console.log('hello');
+        console.log(2+2);
+      }
+      
+      function1();
+      function1();
+      */
+
+      //parameters: opposite of return as parameters puts a value into a function. parameter works the same way as a variable
+      function calculateTax(cost, taxPercent = 0.1) {
+        console.log(cost * taxPercent);
+      }
+
+      calculateTax(2000, 0.2);
+      calculateTax(5000);
+      //syntax rules for parameters: names go in round brackets of function. cant use special words like function, cant use special characters except $_, cant use numbers, and use camelCase
+      
+    </script>
+  </body>
+</html>
+
