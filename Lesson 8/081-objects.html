@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      /* INTRO TO OBJECTS
+      //an object groups multiple values together. in this case socks and 1099 are values and name and price are properties. to create an object use curly brackets.
+      const product = {
+        name: 'socks', 
+        price: 1090
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      //we can change the value of a property in an object w the following
+      product.name = 'cotton socks';
+      console.log(product);
+
+      //we can create new properties w new value w the following
+      product.newProperty = true;
+      console.log(product);
+
+      //we can delete properties
+      delete product.newProperty;
+      console.log(product);
+      //an object is just another type of value and they make our code more organized as they group values
+      */
+
+      /* OBJECTS PT 2
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function function1() {
+          console.log('function inside object');
+        } 
+      };
+
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']);
+      //both above are the same, bracket notation lets us use properties that dont work w dot notation like with -
+      console.log(product2['delivery-time']);
+      //usually use dot notation by default as its shorter and easier to read but when properties dont work w dot notation use bracket notation
+
+      console.log(product2.rating.count);
+      product2.fun();
+      //we can also save a function inside an object. In this case, we gave the object the property 'fun' and used a function as its value. We can call the function w the above line: product2.fun(). Saving a function inside an object like this is called a method. We've been using methods this whole time when we use console.log(). Console is the object and log() is the function saved inside the console object. Method is just a fancy way to name a function saved inside an object. Run the following line to see how console is an object.
+
+      console.log(typeof console.log);
+
+
+      //BUILT IN OBJECTS: JSON and localStorage are also objects within JS
+      //we use JSON bc its universal (understood by other languages) although it has less features. Doesn't support single quotes, only doubles and doesn't support functions. We also use it when we send data between computers and when we store data
+      console.log(JSON.stringify(product2));
+
+      const jsonString = JSON.stringify(product2)
+      console.log(JSON.parse(jsonString));
+      //JSON.stringify converts JS to JSON and JSON.parse reverses it. .stringify() and .parse() are both methods of the JSON object
+      Go to 082-rock-paper-scissors game*/
+    
+      //more details on objects
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+      //other values like strings also have properties and methods such as the above. this is the case bc JS has autoboxing which puts strings in a special box that has properties and methods like above
+
+      const object1 = {
+        message: 'hello'
+      };
+      const object2 = object1;
+
+      object1.message = 'Good job!';
+      //const keeps the reference of the variable constant. it doesn't stop us from reaching in the object and changing its values
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: 'Good job!'
+      };
+      console.log(object3 === object1);
+      console.log(object2 === object1);
+      //be careful when comparing objects as it compares the references, not the values
+
+      const object4 = {
+        message: 'Good job!',
+        price: 799
+      };
+      //const message = object4.message;
+      const { message, price } = object4;
+      console.log(message);
+      console.log(price);
+      //when variable has same name as property, use curly brackets around variable and ommit the property name. the previous comment and the code after it are the same thing, this is called destructuring
+
+      const object5 = { 
+        //message: message
+        message,
+        //if property has the same name as its variable value, you can use the shorthand property by just typing the property like above. so when console.log is used on object5 it will say good job
+        //both methods below create a function, the second one is called a shorthand method. the method is a property of the object
+        //method: function function1() {
+        //  console.log('method');
+        //}
+        method() {
+          console.log('method');
+        }
+      };
+      console.log(object5);
+      object5.method();
+    </script>
+  </body>
+</html>

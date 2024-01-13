@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 8 Exercises</title>
+  </head>
+  <body>
+    <script>
+      //8a
+      const product = {
+        name: 'basketball',
+        price: 2095,
+      };
+      console.log(product);
+
+      //8b
+      product.price += 500;
+      console.log(product);
+
+      //8c
+      product['delivery-time'] = '3 days';
+      console.log(product);
+
+      //8d
+      const product2 = {
+        name: 'socks',
+        price: 999,
+      };
+
+      function comparePrice(product1, product2) {
+        if (product1.price < product2.price) {
+          return product1;
+        } else {
+          return product2;
+        }
+      }
+      console.log(comparePrice(product, product2));
+
+      //8e
+      function isSameProduct(product1, product2) {
+        if (product1.name === product2.name && product1.price === product2.price) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      const product3 = {
+        name: 'basketball',
+        price: 2595,
+      };
+
+      console.log(isSameProduct(product, product3));
+
+      //8f
+      console.log('Good Morning'.toLowerCase());
+
+      //8g
+      console.log('test'.repeat(3));
+
+      /*8h
+      Add localStorage to calculator project. first, make a copy of the project from exercise 7g
+        1. whenever we update the calculation, save it using .setItem()
+        2. when the page is loaded, get the calculation using .getItem()
+        3. use a default value of ''if a calculation doesnt exist in local storage
+      */
+
+      /*8i-k
+      8i) We'll improve the coin flip game from exercise 6j to be like the rock paper scissors game
+        1) copy the code from exercise 6j
+        2) create 2 buttons to play the game: heads and tails
+        3) when clicking heads play the game w guess= heads
+        4) when clicking tails play the game w guess= tails
+        5) create a function playGame(guess) to reuse the code
+      8j) Create a score object {wins: 0, losses: 0}, update the score each time after playing, and display the score in the console
+      8k) use localStorage to save and load the score (hint: youll need to use JSON.stringify() to convert the score object to a string)
+      */
+    </script>
+  </body>
+</html>
