@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">second button</button>
+
+    <script>
+      //start from bottom to top
+      // THIRD PART: document.querySelector() lets us get any element from the page and put it inside JS and make it into an object that has properties
+      console.log(document.querySelector('button').innerHTML);
+      //When the above line of code doesn't include .innerHTML, the string inside the querySelector method will tell JS what HTML element to get from the page. So when it is document.querySelector('button'), it will show <button>hello<button> in the console. However, with .innerHTML, it will give us the HTML within the actual button or whatever was saved
+      document.querySelector('button')
+        .innerHTML = 'changed';
+      //every element has a property called innerHTML that lets us change the inner html. pay attention to the syntax of the code above, it appears as the following model: object.method.property. dot notation can be put in the following line and make sure to indent
+
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+      //HTML elements are JS objects, objects are values, which can be saved into variable. end variable w Elem or Element to show variable has an HTML element
+
+      /* SECOND PART
+      console.log(document.title);
+      document.title = 'Changed';
+      
+      console.log(document.body);
+      console.log(typeof document.body);
+      //we can have html elements inside of JS. The DOM combines JS and html together. The HTML is converted into a JS object. Reminder: DOM is Document Object Model and it is an object in JS called document that models/represents the webpage.
+
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = '<button>Good job!</button>';
+      //innerHTML property gives us control over body element
+      */
+
+      /* FIRST PART
+      document.body.innerHTML = 'hello';
+      the document object and the webpage are linked together
+      document.title = 'Good job!';
+      */
+    </script>
+  </body>
+</html>

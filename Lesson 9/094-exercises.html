@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 9 Exercises</title>
+  </head>
+  <body>
+    <!--9a-->
+    <button>9a</button>
+    <!--9b-->
+    <button class="js-9b-button">9b</button>
+
+    <!--9c-->
+    <button onclick="
+      coinChoice('heads');
+    ">heads</button>
+    <button onclick="
+      coinChoice('tails');
+    ">tails</button>
+    <p class="js-choice"></p>
+
+    <!--9d-->
+    <input placeholder="Name" class="js-name-input" onkeydown="
+      if (event.key === 'Enter') {
+        greet();
+      }
+    ">
+    <button onclick="
+      greet();
+    "
+    >Submit</button>
+    <p class="js-your-name"></p>
+
+    <!--9e is adding onkeydown for enter for the previous problem-->
+    <!--9f is making a function to reuse the code in 9d-->
+    <!--9g: my webpage doesn't show the error that is shown in the 9g challenge so can't do anything about it-->
+
+    <script>
+      //9a
+      console.log(document.querySelector('button'));
+
+      //9b
+      document.querySelector('.js-9b-button').innerHTML = '9b done!';
+
+      //9c
+      function coinChoice(side) {
+        if (side === 'heads') {
+          document.querySelector('.js-choice').innerHTML = `You chose: ${side}`;
+        } else {
+          document.querySelector('.js-choice').innerHTML = 'You chose: tails';
+        }
+      }
+
+      //9d-f
+      function greet() {
+        const inputElement = document.querySelector('.js-name-input')
+        .value;
+        document.querySelector('.js-your-name').innerHTML = `Your name is: ${inputElement}`;
+      }
+
+    </script>
+  </body>
+</html>

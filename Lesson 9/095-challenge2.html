@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 9 Challenge 2</title>
+  </head>
+  <body>
+    <!--in solution, simon has the .value after the second inputElement instead of how I have it here, I dont think it makes a difference-->
+    <input placeholder="Input text" class="js-input" 
+      onkeyup="
+        const inputElement = document.querySelector('.js-input').value;
+        document.querySelector('.js-text').innerHTML= inputElement;
+    ">
+
+    <p class="js-text"></p>
+  </body>
+</html>
