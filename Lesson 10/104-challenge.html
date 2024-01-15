@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 10 Challenge
+    </title>
+    <style>
+      .toggle-button {
+        background-color: rgb(230, 230, 230);
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+      }
+
+      .is-toggled {
+        color: white;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!--10d-->
+    <button class="toggle-button js-button" onclick="
+      toggle('.js-button');
+    ">Gaming</button>
+
+    <!--10e-->
+    <button class="toggle-button js-button2" onclick="
+      toggle('.js-button2');
+    ">Music</button>
+
+    <button class="toggle-button js-button3" onclick="
+    toggle('.js-button3');
+    ">Tech</button>
+
+    <script>
+      //10g
+      function toggle(selector) {
+        const buttonElement = document.querySelector(selector);
+
+        if (!buttonElement.classList.contains('is-toggled')) {
+          turnOffPreviousButton();
+          buttonElement.classList.add('is-toggled');
+        } else {
+          buttonElement.classList.remove('is-toggled');
+        }
+      }
+
+      function turnOffPreviousButton() {
+        const previousButton = document.querySelector('.is-toggled');
+
+        if (previousButton) {
+          previousButton.classList.remove('is-toggled');
+        }
+      }
+    </script>
+  </body>
+</html>

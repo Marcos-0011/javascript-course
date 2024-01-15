@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+      /* make sure to write the new added class below the other class to make sure to override the styles (the lower ones will override the ones above)
+      */
+
+      .cost-input {
+        font-size: 15px;
+        /*
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        the next line does the same as the 4 lines above
+        */
+        padding: 10px;
+      }
+
+      .calculate-button {
+        background-color: green;
+        color: white;
+        border: none;
+        font-size: 15px;
+        padding: 12px 15px;
+        /*the first value is vertical padding and the second value is the horizontal padding*/
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="
+      subscribe();
+    " class="js-subscribe-button subscribe-button">
+      Subscribe
+    </button>
+    <!--an element can have multiple classes. its a good practice to use multiple, for example one for JS and another for CSS. they just need to be separated by a space-->
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
+      handleCostKeydown(event);
+    ">
+    <!--we add another class to the input element here for the CSS-->
+    <button onclick="
+      calculateTotal();
+    " class="calculate-button">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <script>
+      String(25)
+      console.log('25' - 5);
+      console.log('25' + 5);
+
+      window.document
+      window.console.log('window');
+      window.alert
+
+      function handleCostKeydown(event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value);
+
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerText === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed');
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+          buttonElement.classList.remove('is-subscribed');
+        }
+      }
+      /* classList gives us control of the class attribute. so we can then add a class and it will have different styles. classList is an object which means it has properties too. add() adds a class, the string inside is the class we want to add. remove() removes a class. notice how we dont use a dot when we're doing classList.add() and remove() compared to querySelector where we do use a dot. in the video he says that it just makes sense bruh
+    </script>
+  </body>
+</html>
