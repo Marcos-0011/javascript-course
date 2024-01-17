@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+  </head>
+  <body>
+    <script>
+      /*PART 1
+      //ARRAYS: its another type of value and it represents a list of values. arrays can be saved into variables bc they are values.
+      const myArray  = [10, 20, 30];
+      console.log(myArray);
+
+      //we can get a value out of an array by calling the array with the variable and then typing square brackets (similar to a function). inside the brackets, typing '0' gets us the first value in the array which in this case is 10. typing '1' gets us 20. the numbers inside the square brackets like 0 or 1 is called an index, it represents the position in the array
+      console.log(myArray[1]);
+
+      //we can change a value inside an arrary by doing the following code. this makes the value in the first or 0 position of the array into 99
+      myArray[0] = 99;
+      console.log(myArray);
+
+      //syntax rules of arrays: start with an open square bracket and then finish with a closed square bracket. in between the brackets, list out values separated by commas. each value can also be put on a new line after the comma
+
+      //inside an array, we can put any type of value. here we saved a number, string, boolean value, and object. we can save arrays in variables or other arrays.
+      [1, 'hello', true, { name: 'socks' }, [1, 2]]
+
+      //an arrary is a special type of object
+      console.log(typeof [1, 2]);
+      //you can check if the value is spefically an array with the following code inside console.log
+      console.log(Array.isArray([1, 2]));
+
+      //arrays also have properties and methods.length will tell us how many values are in an array. .push() adds a value to the end of the array. .splice() removes a value from an array
+      console.log(myArray.length);
+      myArray.push(100);
+      console.log(myArray);
+
+      //splice takes two values, first is the index we want to remove (the video doesnt say this but it seems it really means the index that it starts to remove and continues from there) and the second one is the number of values we want to remove
+      myArray.splice(0, 1);
+      console.log(myArray);
+      GO TO 112-TODO-LIST.HTML AND DO FIRST TODO LIST
+      */
+
+      /*PART 2
+      //LOOPS: this is called a while loop. while the condition inside the brackets is true, it will continue to run the code until it becomes false. while loop syntax: type while () {}. in the first brackets goes the loop condition. in the second set of brackets goes the loop body which includes the increment step (which makes sure the loop ends at some point). then outside of the while loop, write the loop variable. the loop brackets create a scope, any variable created within the brackets only exists within the brackets
+
+      let i = 1;
+
+      while (i <= 5) {
+        console.log(i);
+        i++;
+      }
+
+      //this is called a for loop. for the following lines of code in the first set of brackets, it will run the code inside the second set of brackets. for loop syntax: type for () {}. in the first set of brackets goes the loop variable, loop condition, and increment step. inside the second set of brackets goes the loop body. the for loop does the same thing as a while loop but just w more efficient code 
+
+      for (let i = 1; i <= 5; i++) {
+        console.log(i);
+      }
+
+      //While vs For loop: when do we use which? if its a standard loop then we use for, but if its a non-standard loop then we use a while loop. non-standard loop: we want to generate random numbers until one thats at least 0.5 like the following. There is technically no increment step and no loop variable that we increase every time. When we have a non-standard loop its better to use a while loop bc they are more flexible
+
+      let randomNumber = 0;
+
+      while (randomNumber <= 0.5) {
+        randomNumber = Math.random();
+      }
+      
+      console.log(randomNumber);
+      GO TO PART 3: LOOPING THROUGH AN ARRAY
+      */
+
+      /* PART 3: Looping through an array: 
+        1) go through each value of an array one by one 
+        2) do something with each value
+
+      const todoList = [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ]
+
+      //to take the todoList and display it on the page: run a loop from 0 to the last index of the array. in the first set of brackets write the loop variable, loop condition which is done by number of values in the array -1 or array.length -1. this is bc the array index starts w 0. typing todoList[index] runs through each value of the array since the index variable starts w 0 and goes until its 2. This is called looping through an array.
+
+      for (let i = 0; i < todoList.length; i++) {
+        const value = todoList[i]; (this will acess the index variable and retrive the value in the array at the index number)
+        console.log(value);
+      }
+
+      //shortcuts for looping through an array: instead of writing index <= todoList.length -1, we write index < todoList.length. also replace index w just i.
+      GO TO PART 4 ACCUMULATOR PATTERN
+      */
+
+      /*
+      //PART 4: Accumulator Pattern (that can be combined w an array)
+      //Problem: we have an arrary of numbers like [1, 1, 3]. How do we calculate the total?
+      const nums = [1, 1, 3];
+      let total = 0; //Accumulator Variable: this creates a variable to store the result and accumulates as we loop through the array
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i]; //this loops through the array
+        total += num;
+      }
+       
+      console.log(total);
+      //Accumulator Pattern:
+      //  1) create a variable to store the result
+      //  2) loop through the array and update the result
+
+      //create a copy of the arrary w each number doubled. lets use accumulator pattern. we can use different values as the accumulator variable, here we'll use an arrary. it depends on the problem we're trying to solve.
+      const numsDoubled = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        numsDoubled.push(num * 2);
+      }
+
+      console.log(numsDoubled);
+      //GO TO 112-TODO-LIST.HTML FOR SECOND VERSION OF TODO LIST
+      */
+
+      //PART 5: COME BACK HERE AFTER FINISHING 1121-TODO-LIST.HTML. detail 1: arrays are references like objects
+      const array1 = [1, 2, 3];
+      //this array doesn't actually contain the values 1, 2, and 3. this array is saved in the computers memory and the variable array1 contains a reference to that array in the memory
+      const array2 = array1.slice();
+      //if we make a copy like array2, it doesnt save a copy of the array, it saves a copy of the reference to the array in the memory. so now both variables are "pointing" to the same array
+      //to avoid this copy of reference, we can actually copy the values to create a new array by adding .slice() to array1 like in the line of code above
+      array2.push(4);
+      console.log(array1);
+      console.log(array2);
+
+      //detail 2: shortcut of destructuring. this helps get specific values we want out of an array. firstValue takes the first value and saves it into firstValue and secondValue does the same for the second one
+      const [firstValue, secondValue] = [1, 2, 3];
+
+      //more details about loops:
+      //detail 3: break lets us exit a loop early. lets create a loop that counts from 1 to 10 but we want it to stop at 8. continue lets us skip 1 iteration of the loop. lets say we want to skip 3. tell the computer if i is 3 then skip the rest of the code and continue with the next iteration. replace by skipping a number that is divisible by 3. we can check if the remainder is 0 meaning it IS divisible by the first if
+      for (let i = 1; i <= 10; i++) {
+        if (i % 3 === 0) {
+          continue;
+        }
+        console.log(i);
+        if (i === 8) {
+          break;
+        }
+      }
+
+      //detail 4: be careful about using continue in a while loop as it will skip the increment step and will create an infinite loop. we have to do the increment step manually by adding it before continue to avoid the infinite loop and will successfully skip the numbers that are divisible by 3. in a while loop the increment step is done manually while in a for loop it is automatically done
+      let i = 1;
+
+      while (i <= 10) {
+        if (i % 3 === 0) {
+          i++
+          continue;
+        }
+        console.log(i);
+        i++;
+      }
+
+      //detail 5: last detail we'll learn is how to use loops w functions. we want to create an array where the numbers are doubled from another array instead of the original being a variable called nums. we can do that by using a function w a parameter. now we can double it given any value/array
+      function doubleArray(nums) {
+        const numsDoubled = [];
+
+        for (let i = 0; i < nums.length; i++) {
+          const num = nums[i];
+          //lets say we'll break the loop early if we see 0 in the array
+          if (num === 0) {
+            return numsDoubled;
+            //we can also use break to end the loop early here
+          }
+          numsDoubled.push(num * 2);
+        }
+
+        return numsDoubled;
+      } 
+
+      //we can break out of the loop by using return and doing console.log outside of the function
+
+      console.log(doubleArray([1, 1, 3]));
+      console.log(doubleArray([2, 2, 5, 0, 5]));
+
+      /*
+      in this lesson we learned:
+      1. array = list of values
+      2. loops (while loop, for loop)
+      3. accumulator pattern
+      4. created a todo list project
+      5. array are references, destructuring
+      6. more features of loops: break, continue, loops inside a function
+      NOW GO TO LESSON 11-2 AND FILE 1122-EXERCISES.HTML
+      */
+
+    </script>
+  </body>
+</html>

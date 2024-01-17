@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 11 Exercises
+    </title>
+  </head>
+  <body>
+    <script>
+      //11a
+      const nums = [10, 20, 30];
+      nums[2] = 99;
+      console.log(nums);
+
+      //11b
+      function getLastValue(array) {
+        const lastIndex = array.length - 1;
+        console.log(array[lastIndex]);
+      }
+
+      const firstArray = [1, 20, 22, 24, 5];
+      const secondArray = ['hi', 'hello', 'good'];
+
+      getLastValue(firstArray);
+      getLastValue(secondArray);
+
+      //11c
+      function arraySwap(array) {
+        const lastIndex = array.length - 1;
+        const firstIndex = array[0];
+
+        //compared to simon's code, i cut out the middle man bc he saves arrary[lastIndex] into another variable called lastValue which he then saves into array[0]. in my code, it is technically not correct to save array[0] into the variable firstIndex, instead, the variable should be called firstValue, which is how it is in simon's code
+        array[0] = array[lastIndex];
+        array[lastIndex] = firstIndex;
+
+        return array;
+      }
+
+      console.log(arraySwap(firstArray));
+      console.log(arraySwap(secondArray));
+    </script>
+  </body>
+</html>

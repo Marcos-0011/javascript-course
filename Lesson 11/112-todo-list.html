@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <p>Todo List</p>
+    <input placeholder="Todo name" class="js-name-input">
+    <button onclick="
+      addTodo();
+    ">Add</button>
+
+    <!--the purpose of a div is to contain other HTML elements, it is a container. we cant use a paragraph element here bc we cant have a paragraph inside another paragraph element. instead we use a div which is a block element which means it takes up all the space to the right. divs also dont have any default styling of extra space around it unlike paragraph elements-->
+    <div class="js-todo-list"></div>
+
+    <script src="scripts/112-todo-list.js"></script>
+  </body>
+</html>

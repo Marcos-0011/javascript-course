@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 11 Exercises 2
+    </title>
+    <body>
+      <script>
+       //11d
+      for (c = 0; c < 12; c += 2) {
+        console.log(c);
+      }
+
+      //11e
+      for (d = 5; d >= 0; d--) {
+        console.log(d);
+      }
+
+      //11f
+      let a = 0;
+      while (a < 12) {
+        console.log(a);
+        a += 2;
+      }
+
+      let b = 5;
+      while (b >= 0) {
+        console.log(b);
+        b--;
+      }
+
+      //11g
+      const firstArray = [1, 2, 3];
+      let secondArray = [];
+
+      for (i = 0; i < firstArray.length; i++) {
+        let values = firstArray[i];
+        values++;
+        secondArray.push(values);
+      }
+
+      console.log(secondArray);
+
+      //11h
+      function addOne(array) {
+        const newArray = [];
+
+        for (i = 0; i < array.length; i++) {
+          /*Long way that i came up with:
+          let values = array[i];
+          values++;
+          newArray.push(values);
+          */
+          newArray.push(array[i] + 1);
+        }
+        
+        return newArray;
+      }
+
+      console.log(addOne([1, 2, 3]));
+      console.log(addOne([-2, -1, 0, 99]));
+      </script>
+    </body>
+  </head>
+</html>
