@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 8 Exercise Review</title>
+  </head>
+  <body>
+    <script>
+      //8a
+      const product = {
+        name: 'basketball',
+        price: 2095
+      }
+
+      console.log(product);
+
+      //8b
+      product.price += 500;
+      console.log(product);
+
+      //8c
+      product['delivery-time'] = '3 days';
+      console.log(product);
+
+      //8d
+      function comparePrice(product1, product2) {
+        if (product1.price < product2.price) {
+          return product1;
+        } else {
+          return product2;
+        }
+      }
+
+      const product2 = {
+        name: 'shirt',
+        price: 999
+      }
+
+      console.log(comparePrice(product, product2));
+
+      //8e
+      function isSameProduct(product1, product2) {
+        if (
+          product1.name === product2.name && product1.price === product2.price
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      console.log(isSameProduct(product, product2));
+
+      const product3 = {
+        name: 'shirt',
+        price: 999
+      }
+      
+      console.log(isSameProduct(product2, product3));
+
+      //8f
+      console.log('Good Morning'.toLowerCase());
+
+      //8g
+      console.log('test'.repeat(12));
+
+    </script>
+  </body>
+</html>

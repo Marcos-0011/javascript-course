@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="
+      playGame('rock');
+    ">Rock</button>
+
+    <button onclick="
+      playGame('paper');
+    ">Paper</button>
+
+    <button onclick="
+      playGame('scissors');
+    ">Scissors</button>
+
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+    ">Reset Score</button>
+
+    <script>
+      //we create the score object outside the function bc putting it inside a function would create a new score each time the function is ran
+      /*const score = {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
+      */
+
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
+
+      /*
+      if (!score) {
+        score = {
+          wins: 0,
+          losses: 0,
+          ties: 0
+        };
+      }
+      */
+      //console.log(localStorage.getItem('message'));
+
+      function playGame (playerMove) {
+        const computerMove = pickComputerMove();
+
+        let result = '';
+
+        if (playerMove === 'scissors') {
+          if (computerMove === 'rock') {
+            result = 'You lose.';
+          } else if (computerMove === 'paper') {
+            result = 'You win.';
+          } else if (computerMove === 'scissors') {
+            result = 'Tie.';
+          }
+
+        } else if (playerMove === 'paper') {
+          if (computerMove === 'rock') {
+            result = 'You win.';
+          } else if (computerMove === 'paper') {
+            result = 'Tie.';
+          } else if (computerMove === 'scissors') {
+            result = 'You lose.';
+          }
+          
+        } else if (playerMove === 'rock') {
+          if (computerMove === 'rock') {
+            result = 'Tie.';
+          } else if (computerMove === 'paper') {
+            result = 'You lose.';
+          } else if (computerMove === 'scissors') {
+            result = 'You win.';
+          }
+        }
+        //we can put an if statement inside another if statement
+
+        if (result === 'You win.') {
+          score.wins += 1;
+        } else if (result === 'You lose.') {
+          score.losses += 1;
+        } else if (result === 'Tie.') {
+          score.ties += 1;
+        }
+
+        //localStorage.setItem('message', 'hello');
+        localStorage.setItem('score', JSON.stringify(score));
+
+        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
+      }
+      /*Strat for JS: 1) think about what steps we need 2) convert those steps into code */
+
+      function pickComputerMove() {
+        const randomNumber = Math.random();
+
+        let computerMove = '';
+
+        if (randomNumber >=0 && randomNumber < 1 / 3) {
+          computerMove = 'rock';
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerMove = 'paper';
+        } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+          computerMove = 'scissors';
+        }
+
+        return computerMove;
+        //return statements let us get a value out of the function. type return and then a value, can be through a calculation, variable, or anything else. returns also end a function. Returning is preffered to global variables as it avoids conflicts
+      }
+      //functions also create a scope, limiting where a variable exists. functions make our code easier to update tho
+      //any variable created inside only curly brackets only exists within those curly brackets
+    </script>
+  </body>
+</html>
+
