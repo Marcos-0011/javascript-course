@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 11.2 Exercises 2
+    </title>
+  </head>
+  <body>
+    <script>
+      //11r
+      const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+
+      function removeEgg(array) {
+        const result = [];
+        let eggsRemoved = 0; //11s added an accumulator variable
+
+        const copiedArray = array.slice();//11u made a copy of the original array
+        const foodsReversed = copiedArray.reverse(); //11t reversed the original array
+
+        for (let i = 0; i < foodsReversed.length; i++) {
+          if (foodsReversed[i] === 'egg' && eggsRemoved < 2) { //11s added second half of if condition) 
+            eggsRemoved++;
+            continue;
+          }
+        
+          result.push(copiedArray[i]);
+        }
+
+        return result.reverse(); //11t reversed the result array to display the order of items correctly
+      }
+
+      console.log(removeEgg(foods));
+
+      console.log(foods);
+
+      //11s update 11r to only remove the first 2 eggs
+
+      //11t use .reverse() to update exercise 11s to only remove the last 2 eggs from the array
+
+      //11u in exercise 11t, one problem with .reverse() is that it doesnt create a copy of the array it is reversing. it modifies the original array. update the code so the function does not modify the original array (hint: use the .slice() method to create a copy of an arrays values)
+    </script>
+  </body>
+</html>

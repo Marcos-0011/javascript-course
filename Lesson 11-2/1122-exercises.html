@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 11.2 Exercises
+    </title>
+  </head>
+  <body>
+    <script>
+      //11o
+      /*first try
+      const array1 = ['hello', 'world', 'search', 'good'];
+      const array2 = ['not', 'found'];
+
+      function searchArray(array) {
+        for (let i = 0; i < array.length; i++) {
+          const string = array[i];
+          if (string === 'search') {
+            console.log(i);
+          } else {
+            console.log(-1);
+          }
+        }
+      }
+      figure out how to console log the number just once or is it supposed to happen just once?? instructions are kinda unclear
+      then looked for answer
+      */
+      let words = ['hello', 'world', 'search', 'good'];
+
+      let index = -1
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          index = i
+        }
+      }
+
+      console.log(index);
+
+      words = ['not', 'found'];
+
+      index = -1
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          index = i
+        }
+      }
+
+      console.log(index);
+
+      //llp: modify 11o so that if 'search' appears multiple times in the array it will only console.log the index of the first appearance so use break. 
+      words = ['hello', 'world', 'search', 'good', 'search'];
+
+      index = -1
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          index = i
+          break; //this is the only modification
+        }
+      }
+
+      console.log(index);
+
+      //11q
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            index = i
+            return index;
+          }
+        }
+        return -1; //struggled w this step, couldn't figure out that you can just return whatever you want in a function
+      }
+
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+    </script>
+  </body>
+</html>

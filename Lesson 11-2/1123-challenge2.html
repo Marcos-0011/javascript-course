@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 11.2 Challenge 2
+    </title>
+  </head>
+  <body>
+    <script>
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            index = i
+            return index;
+          }
+        }
+        return -1;
+      }
+
+      function unique(array) {
+        const result = [];
+
+        for (let i = 0; i < array.length; i++) {
+          const word = array[i];
+          
+          if (findIndex(result, word) === -1) {
+            result.push(word);
+          }
+          //needed to look up answer for this if statement. was headed in the right direction but I didnt think of using result in the findIndex function and to have that equal to -1. needed help creating the proper if statement
+        }
+        return result;
+      }
+
+      console.log(unique(['green', 'red', 'blue', 'red']));
+      console.log(unique(['red', 'green', 'green', 'red']));
+    </script>
+  </body>
+</html>

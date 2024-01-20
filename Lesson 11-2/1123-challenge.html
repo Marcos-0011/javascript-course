@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 11.2 Challenge 1
+    </title>
+  </head>
+  <body>
+    <script>
+      for (let i = 1; i <= 20; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log('FizzBuzz');
+          continue;
+        }
+        if (i % 3 === 0) {
+          console.log('Fizz');
+          continue
+        }
+
+        if (i % 5 === 0) {
+          console.log('Buzz');
+          continue;
+        }
+        console.log(i);
+      }
+      //simon use else if () instead of continue, his code is more efficient and more clean
+    </script>
+  </body>
+</html>

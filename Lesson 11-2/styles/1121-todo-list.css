@@ -1,0 +1,44 @@
+body {
+  font-family: Arial;
+}
+
+/*8: can style multiple elements at a time by adding a coma to the class and then adding another class as the following code shows*/
+.todo-grid,
+.todo-input-grid {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  /*7:grid-template-columns tells CSS how many columns to create. in this case we'll have three columns, the first will be 200px, second is 150px, and the 3rd will be 100px. however, the original code in JS has p element around the name, dueDate, and delete button that groups it into a single element that is then squished into a single column. we need to go back to the JS and give each one its own div to make them go into the appropriate columns. after each third element, the CSS will wrap around below and fill in the first column. we use divs bc they are easier to style as they dont have default settings*/
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.todo-input-grid {
+  margin-bottom: 10px;
+  align-items: stretch;
+  /*9: we need align-items: stretch as align-items is originally set to stretch but is then changed due to center from the code above. we set it back here which overrides the center for todo-input-grid. NOW GO TO 111-ARRAYS-AND-LOOPS TO LEARN MORE DETAILS ABOUT ARRAYS AND LOOPS */
+}
+
+.name-input,
+.due-date-input {
+  font-size: 15px;
+  padding: 6px;
+}
+
+.add-todo-button {
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.delete-todo-button {
+  background-color: darkred;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
