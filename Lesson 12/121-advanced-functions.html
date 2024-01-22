@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    <script>
+      /*
+      //PART 1: 1)review how to use functions. functions are values so we can saved them inside a variable
+      //5) this type of syntax has a few advantages. its easier to read and we can hoist which mean we can call the function before creating it in the code. meaning we dont need to worry about the placement of our code in this case. however, we cant do this when we save the function into a variable
+      
+      function greeting() {
+        console.log('hello');
+      }
+      greeting();
+
+      const num = 2;
+
+      //4) as long as there is a way to access the function, the name of the function isn't needed so delete greeting after function. this is called an anonymous function bc it doesnt have a name
+
+      const function1 = function() {
+        console.log('hello2');
+      }; //2)add a semi colon here as were saving the function into a variable
+      
+      console.log(function1);
+      console.log(typeof function1);
+      function1(); //3)bc this variable contains a function, we can just call it by typing the variable and round brackets
+
+      //6 we can also save a function into an object bc we can save a value into an object. a function inside an object is called a method and remember we dont need the function name as long as ther is another way to call the function
+      const object1 = {
+        num: 2,
+        fun: function() {
+          console.log('hello3');
+        }
+      };
+      object1.fun();
+
+      //7 we can also pass a value into a function
+      function display(param) {
+        console.log(param);
+      }
+
+      display(2);
+
+      //8 bc functions are values, we can also pass a function into another function. the function is saved into param so now we can use it like a variable and call it using round brackets. the function were passing through is called a callback function
+      function run(param) {
+        param();
+      }
+      run(function() {
+        console.log('hello4');
+      });
+      CONTINUE TO PART 2*/
+
+      /*
+      //PART 2: now lets do practical examples. setTimeout allows us to run a function in the future. setTimeout takes two parameters, the first one being the function we want to run in the future, the second one is how long to wait before running this function, specifically in milliseconds (1000 milliseconds is 1 second). setTimeout will set up a timer and go immediately to the next line of code. this is called asynchronous code: the computer wont wait for a line to finish before going to the next line. it'll just set up the timer and go to the next line. on the other hand, synchronous code will wait for one line to finish before going to the next line. all the code weve written in the course before is synchronous. most code we will write is synchronous. only when we use special features of JS is it when our code can become asynchronous
+      setTimeout(function() {
+        console.log('timeout');
+        console.log('timeout2');
+      }, 3000);
+
+      console.log('next line');
+      //advantage: it doesnt block our code for 3 seconds. it allows our code to do other things while the timer is running in the background. similar to a timer
+
+      //setInterval is very similar to setTimeout, however setInterval will keep running the function after a certain period of time, in this case 3 seconds. it is also asynchronous as it moves on the next line
+      setInterval(function() {
+        console.log('interval');
+      }, 3000);
+
+      console.log('next line 2');
+      NOW GO TO 122-ROCK-PAPER-SCISSORS FILES FOR THE AUTOPLAY FEATURE 
+      AFTER GO TO PART 3 FOR MORE FEATURES OF ADVANCED FUNCTIONS*/
+
+      //PART 3: another way to loop through an array using the forEach method. it will loop through the array by taking each value from the array and putting it in the parameter of the function. the forEach method is actually the preffered way to loop through an array as its easier to read than a loop. additionally, forEach can also grab the index of each value by taking another parameter in the function called index. now we'll do a practical example using the todo list.
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ].forEach(function(value, index) {
+        //for each doesnt have continue how loops do, so if we want to skip a certain value, we would do the following code. in this case, return does the same thing as continue. it ends the function early for that value and moves on to the next value. however, if we want to exit the forEach method early, we cant use break and there is no other way to break the loop. so if break is needed, we would use a reguler for loop
+        if (value === 'wash dishes') {
+          return;
+        }
+
+        console.log(index);
+        console.log(value);
+      });
+      //now go to 123-todo-list-js for the practical example
+
+    </script>
+  </body>
+</html>

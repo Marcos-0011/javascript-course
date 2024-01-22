@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 12 Challenge 1
+    </title>
+  </head>
+  <body>
+    <button onclick="
+      added();
+    ">Add to cart</button>
+
+    <p class="js-added"></p>
+  
+    <script>
+      let addedItem = false;
+
+      let timeoutID;
+
+      const paraElement = document.querySelector('.js-added');
+      
+      function added() {
+        if (!addedItem) {
+          paraElement.innerHTML = 'Added';
+
+          timeoutID =  setTimeout(function() {
+            paraElement.innerHTML = '';
+          }, 2000);
+
+          addedItem = true;
+        } else {
+          clearTimeout(timeoutID);
+
+          setTimeout(function() {
+            paraElement.innerHTML = '';
+          }, 2000);
+
+          addedItem = false;
+        }
+      }
+
+    </script>
+  </body>
+</html>

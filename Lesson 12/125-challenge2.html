@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 12 Challenge 2
+    </title>
+  </head>
+  <body>
+    <button onclick="
+      messages++; 
+    ">Add</button>
+    <button onclick="
+      if (messages > 0) {
+        messages--;
+      }
+    ">Remove</button>
+
+      <!--12i: continuing from 12h:
+        1) dont let messages go below 0
+        2) if messages === 0 stop changing the title and display 'App' ass the title
+        3) when messages > 0 start changing the title again-->
+    <script>
+      //12g imagine we're creating a messaging app. use setInterval() and document.title to create the feature on the right (the title changes every 1 second)
+      document.title = 'App';
+
+      let messages = 2;
+      //12h continuing from 12g, instead of displaying "(2) New messages" every time, save the number of messages in a variable: let messages = 2;. use the number in the variable to determine what title to display. create 2 button 'Add'/'Remove' that increase/decrease the 'messages' variable by 1. created messages variable and added it to the interval. also created add and remove buttons
+
+      setInterval(function() {
+        if (document.title === 'App' && messages > 0) {
+          document.title = `(${messages}) New messages`;
+        } else {
+          document.title = 'App';
+        }
+      }, 1000)
+
+    </script>
+  </body>
+</html>
